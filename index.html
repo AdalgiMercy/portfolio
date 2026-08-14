@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <script>document.documentElement.classList.add('js');</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>André Adonis Mounguengui — AI &amp; Full-Stack Software Engineer</title>
+  <meta name="description" content="André Adonis Mounguengui — AI & Full-Stack Software Engineer in Brazzaville. I build autonomous agent systems and multi-tenant SaaS, from infrastructure to model." />
+  <meta name="author" content="André Adonis Mounguengui" />
+  <meta name="theme-color" content="#0E0E12" />
+  <link rel="canonical" href="https://adalgimercy.github.io/" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="André Adonis Mounguengui — AI & Full-Stack Software Engineer" />
+  <meta property="og:description" content="Autonomous agent systems · multi-tenant SaaS · DevOps & infrastructure." />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="André Adonis Mounguengui — AI & Full-Stack Software Engineer" />
+  <meta name="twitter:description" content="Autonomous agent systems · multi-tenant SaaS · DevOps & infrastructure." />
+
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script type="module" src="assets/i18n.js" defer></script>
+  <script type="module" src="assets/theme.js" defer></script>
+  <script type="module" src="assets/main.js" defer></script>
+  <script type="module" src="assets/effects.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "André Adonis Mounguengui",
+    "jobTitle": "AI & Full-Stack Software Engineer",
+    "email": "mailto:andreadonismercy@gmail.com",
+    "telephone": "+242044244495",
+    "address": { "@type": "PostalAddress", "addressLocality": "Brazzaville", "addressCountry": "CG" },
+    "sameAs": [
+      "https://github.com/AdalgiMercy",
+      "https://www.linkedin.com/in/andre-mo-aa5ab4420/"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Immersive layer (animated only when JS + full motion; hidden in print) -->
+  <canvas id="bg-net" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+
+  <a class="skip-link" href="#main" data-en="Skip to content" data-fr="Aller au contenu">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a class="nav__brand" href="#hero" aria-label="André Adonis Mounguengui — home">AAM</a>
+
+      <button class="nav__burger" id="nav-burger" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav__links" id="nav-links">
+        <li><a href="#about" data-en="About" data-fr="À propos">About</a></li>
+        <li><a href="#skills" data-en="Skills" data-fr="Compétences">Skills</a></li>
+        <li><a href="#work" data-en="Work" data-fr="Réalisations">Work</a></li>
+        <li><a href="#experience" data-en="Experience" data-fr="Expérience">Experience</a></li>
+        <li><a href="#education" data-en="Education" data-fr="Formation">Education</a></li>
+        <li><a href="#contact" data-en="Contact" data-fr="Contact">Contact</a></li>
+      </ul>
+
+      <div class="nav__tools">
+        <button id="lang-toggle" class="nav__icon-btn" aria-label="Switch language">FR</button>
+        <button id="theme-toggle" class="nav__icon-btn" aria-label="Toggle theme">☀</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section id="hero" class="hero">
+      <div class="orb orb--a" aria-hidden="true"></div>
+      <div class="orb orb--b" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <span class="hero__mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="60" height="60" rx="16" stroke="currentColor" stroke-width="2.5"/>
+            <text x="32" y="41" text-anchor="middle" font-family="ui-monospace, monospace" font-size="26" font-weight="700" fill="currentColor">A</text>
+          </svg>
+        </span>
+        <p class="hero__eyebrow" data-en="Hello, I'm" data-fr="Bonjour, je suis">Hello, I'm</p>
+        <h1 data-scramble>André Adonis Mounguengui</h1>
+        <p class="hero-title" data-scramble>AI &amp; Full-Stack Software Engineer</p>
+        <p class="hero-tagline"
+           data-en="Autonomous agents · multi-tenant SaaS · DevOps &amp; infrastructure."
+           data-fr="Agents autonomes · SaaS multi-tenant · DevOps &amp; infrastructure.">
+          Autonomous agents · multi-tenant SaaS · DevOps &amp; infrastructure.
+        </p>
+        <p class="muted hero-location"
+           data-en="Brazzaville, Republic of Congo · open to remote / international"
+           data-fr="Brazzaville, République du Congo · ouvert au télétravail / international">
+          Brazzaville, Republic of Congo · open to remote / international
+        </p>
+        <div class="hero__cta">
+          <button class="btn btn--primary" id="print-cv" data-en="Download CV" data-fr="Télécharger le CV">Download CV</button>
+          <a class="btn" href="https://github.com/AdalgiMercy" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/andre-mo-aa5ab4420/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="https://wa.me/918018753328" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn--ghost" href="mailto:andreadonismercy@gmail.com">Email</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS MARQUEE (decorative, animates under .fx) ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <div class="marquee__group">
+          <span class="marquee__item">TypeScript</span><span class="marquee__item">NestJS</span><span class="marquee__item">Next.js</span><span class="marquee__item">React</span><span class="marquee__item">Prisma</span><span class="marquee__item">PostgreSQL</span><span class="marquee__item">Docker</span><span class="marquee__item">Kubernetes</span><span class="marquee__item">CI/CD</span><span class="marquee__item">LLM Agents</span><span class="marquee__item">TensorFlow</span><span class="marquee__item">PyTorch</span><span class="marquee__item">Python</span><span class="marquee__item">Redis</span>
+        </div>
+        <div class="marquee__group">
+          <span class="marquee__item">TypeScript</span><span class="marquee__item">NestJS</span><span class="marquee__item">Next.js</span><span class="marquee__item">React</span><span class="marquee__item">Prisma</span><span class="marquee__item">PostgreSQL</span><span class="marquee__item">Docker</span><span class="marquee__item">Kubernetes</span><span class="marquee__item">CI/CD</span><span class="marquee__item">LLM Agents</span><span class="marquee__item">TensorFlow</span><span class="marquee__item">PyTorch</span><span class="marquee__item">Python</span><span class="marquee__item">Redis</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="reveal">
+      <div class="container">
+        <p class="section-label" data-scramble data-en="About" data-fr="À propos">About</p>
+        <h2 class="section-title" data-en="Profile" data-fr="Profil">Profile</h2>
+        <div class="about__grid">
+          <p class="about__lead"
+             data-en="I'm a software engineer with 8+ years across systems, networks, and DevOps before moving into full-stack development and AI engineering. I hold an M1 in Computer Science &amp; Engineering (AI specialization) and I'm fluent across the whole chain — from server and infrastructure to model."
+             data-fr="Ingénieur logiciel avec plus de 8 ans d'expérience en systèmes, réseaux et DevOps avant de passer au développement full-stack et à l'ingénierie de l'IA. Titulaire d'un Master 1 en Computer Science &amp; Engineering (spécialisation Intelligence Artificielle), je maîtrise toute la chaîne — du serveur et de l'infrastructure jusqu'au modèle.">
+            I'm a software engineer with 8+ years across systems, networks, and DevOps before moving into full-stack development and AI engineering. I hold an M1 in Computer Science &amp; Engineering (AI specialization) and I'm fluent across the whole chain — from server and infrastructure to model.
+          </p>
+          <p class="muted"
+             data-en="I build things end-to-end: most recently, a multi-tenant SaaS platform and the autonomous agent system that runs it — designed, built, shipped, and operated solo."
+             data-fr="Je construis de bout en bout : dernièrement, une plateforme SaaS multi-tenant et le système d'agents autonomes qui la fait tourner — conçus, développés, livrés et exploités en solo.">
+            I build things end-to-end: most recently, a multi-tenant SaaS platform and the autonomous agent system that runs it — designed, built, shipped, and operated solo.
+          </p>
+        </div>
+        <div class="about__stats">
+          <div class="stat"><span class="stat__num">8+</span><span class="stat__label" data-en="years experience" data-fr="ans d'expérience">years experience</span></div>
+          <div class="stat"><span class="stat__num">M1</span><span class="stat__label" data-en="AI engineering" data-fr="ingénierie IA">AI engineering</span></div>
+          <div class="stat"><span class="stat__num">FR/EN</span><span class="stat__label" data-en="bilingual" data-fr="bilingue">bilingual</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section id="skills" class="reveal">
+      <div class="container">
+        <p class="section-label" data-scramble data-en="Skills" data-fr="Compétences">Skills</p>
+        <h2 class="section-title" data-en="Technical toolkit" data-fr="Boîte à outils technique">Technical toolkit</h2>
+        <div class="skills-grid">
+          <div class="card skill-card">
+            <h3 data-en="AI &amp; Machine Learning" data-fr="IA &amp; Machine Learning">AI &amp; Machine Learning</h3>
+            <div class="tags">
+              <span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">PyTorch</span>
+              <span class="tag">Machine Learning</span><span class="tag">Deep Learning</span><span class="tag">LLM agents</span>
+            </div>
+          </div>
+          <div class="card skill-card">
+            <h3>Full-Stack</h3>
+            <div class="tags">
+              <span class="tag">TypeScript</span><span class="tag">NestJS</span><span class="tag">Next.js</span>
+              <span class="tag">React</span><span class="tag">JavaScript</span><span class="tag">HTML</span>
+              <span class="tag">CSS</span><span class="tag">Prisma</span><span class="tag">SQL</span>
+            </div>
+          </div>
+          <div class="card skill-card">
+            <h3 data-en="DevOps &amp; Cloud" data-fr="DevOps &amp; Cloud">DevOps &amp; Cloud</h3>
+            <div class="tags">
+              <span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">CI/CD</span>
+              <span class="tag">Jenkins</span><span class="tag">Git</span><span class="tag">Blue-green deploy</span>
+            </div>
+          </div>
+          <div class="card skill-card">
+            <h3 data-en="Systems &amp; Networks" data-fr="Systèmes &amp; Réseaux">Systems &amp; Networks</h3>
+            <div class="tags">
+              <span class="tag">Linux (Debian/Ubuntu)</span><span class="tag">Windows Server</span>
+              <span class="tag">Cisco CCNA/CCNP</span><span class="tag">Cisco ASA</span><span class="tag">pfSense</span>
+            </div>
+          </div>
+          <div class="card skill-card">
+            <h3 data-en="Data &amp; Virtualization" data-fr="Données &amp; Virtualisation">Data &amp; Virtualization</h3>
+            <div class="tags">
+              <span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">Redis</span>
+              <span class="tag">VMware</span><span class="tag">Hyper-V</span><span class="tag">Bash</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WORK ============ -->
+    <section id="work" class="reveal">
+      <div class="container">
+        <p class="section-label" data-scramble data-en="Featured Work" data-fr="Réalisations">Featured Work</p>
+        <h2 class="section-title" data-en="Things I've built" data-fr="Ce que j'ai construit">Things I've built</h2>
+
+        <!-- ---- Kanda Ops ---- -->
+        <article class="case card">
+          <div class="case__head">
+            <div>
+              <h3>Kanda Ops</h3>
+              <p class="case__role" data-en="System architect · 2026" data-fr="Architecte système · 2026">System architect · 2026</p>
+            </div>
+            <div class="case__stats">
+              <span class="tag">6 agents</span><span class="tag">5 LLM providers</span><span class="tag">daily 6 AM cron</span>
+            </div>
+          </div>
+          <p class="case__summary"
+             data-en="A permanent agentic team that runs and grows Kanda — prospecting, content, follow-ups, and a daily executive briefing — so a solo founder stays on top of everything."
+             data-fr="Une équipe agentique permanente qui fait tourner et grandir Kanda — prospection, contenu, relances et brief exécutif quotidien — pour qu'un fondateur solo garde le contrôle de tout.">
+            A permanent agentic team that runs and grows Kanda — prospecting, content, follow-ups, and a daily executive briefing — so a solo founder stays on top of everything.
+          </p>
+
+          <figure class="case__diagram">
+            <svg viewBox="0 0 620 300" role="img" aria-labelledby="ops-title" xmlns="http://www.w3.org/2000/svg">
+              <title id="ops-title">Kanda Ops architecture</title>
+              <defs>
+                <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M0,0 L10,5 L0,10 z" fill="var(--accent)"/>
+                </marker>
+              </defs>
+              <!-- agent nodes -->
+              <g font-family="ui-monospace, monospace" font-size="9" fill="var(--text)" text-anchor="middle">
+                <g><rect x="14"  y="18" width="92" height="30" rx="7" fill="var(--surface-2)" stroke="var(--border)"/><text x="60"  y="37">Chef de Cabinet</text></g>
+                <g><rect x="114" y="18" width="92" height="30" rx="7" fill="var(--surface-2)" stroke="var(--accent)"/><text x="160" y="37">Gardien</text></g>
+                <g><rect x="214" y="18" width="92" height="30" rx="7" fill="var(--surface-2)" stroke="var(--border)"/><text x="260" y="37">Marketing</text></g>
+                <g><rect x="314" y="18" width="92" height="30" rx="7" fill="var(--surface-2)" stroke="var(--border)"/><text x="360" y="37">Sales</text></g>
+                <g><rect x="414" y="18" width="92" height="30" rx="7" fill="var(--surface-2)" stroke="var(--border)"/><text x="460" y="37">Content</text></g>
+                <g><rect x="514" y="18" width="92" height="30" rx="7" fill="var(--surface-2)" stroke="var(--border)"/><text x="560" y="37">Prospecting</text></g>
+              </g>
+              <!-- router -->
+              <g font-family="ui-monospace, monospace" font-size="10" fill="var(--text)" text-anchor="middle">
+                <rect x="150" y="95" width="320" height="40" rx="9" fill="var(--accent-soft)" stroke="var(--accent)"/>
+                <text x="310" y="120" font-weight="700">LLM Router — 5 providers · fallback · cost tracking</text>
+              </g>
+              <!-- providers -->
+              <g font-family="ui-monospace, monospace" font-size="9" fill="var(--muted)" text-anchor="middle">
+                <text x="310" y="172">Anthropic · OpenAI · OpenRouter · ZAI · MiMo</text>
+              </g>
+              <!-- facts + telegram -->
+              <g font-family="ui-monospace, monospace" font-size="9" fill="var(--text)" text-anchor="middle">
+                <g><rect x="14"  y="210" width="150" height="34" rx="7" fill="var(--surface-2)" stroke="var(--border)"/><text x="89"  y="231">facts.yml (source of truth)</text></g>
+                <g><rect x="456" y="210" width="150" height="34" rx="7" fill="var(--surface-2)" stroke="var(--border)"/><text x="531" y="231">6 AM cron → Telegram</text></g>
+              </g>
+              <!-- connectors -->
+              <g stroke="var(--accent)" stroke-width="1.4" fill="none" marker-end="url(#arrow)">
+                <path d="M310,48 C310,70 310,80 310,93"/>
+                <path d="M89,244 C89,265 200,265 200,150"/>            <!-- facts -> router (dashed below) -->
+              </g>
+              <g stroke="var(--accent)" stroke-width="1.4" stroke-dasharray="4 3" fill="none">
+                <path d="M89,210 L89,135 L150,135"/>                  <!-- facts -> router guardrail -->
+              </g>
+              <g stroke="var(--accent)" stroke-width="1.4" fill="none" marker-end="url(#arrow)">
+                <path d="M456,227 C400,227 360,180 360,140"/>          <!-- router -> telegram brief -->
+              </g>
+            </svg>
+            <figcaption class="muted" data-en="Agents route through a shared LLM router; the Gardien audits every document against facts.yml; a daily cron ships one Telegram briefing." data-fr="Les agents passent par un routeur LLM partagé ; le Gardien audite chaque document face à facts.yml ; un cron quotidien envoie un seul brief Telegram.">
+              Agents route through a shared LLM router; the Gardien audits every document against facts.yml; a daily cron ships one Telegram briefing.
+            </figcaption>
+          </figure>
+
+          <details class="case__details">
+            <summary data-en="Read more" data-fr="En savoir plus">Read more</summary>
+            <div class="case__body-wrap">
+            <div class="case__body">
+              <h4 data-en="Problem" data-fr="Problème">Problem</h4>
+              <p data-en="As a solo founder, I couldn't keep marketing, sales operations, and content running in parallel while also building the product — and hiring wasn't an option yet."
+                 data-fr="Fondateur solo, je ne pouvais pas mener de front marketing, opérations commerciales et contenu tout en construisant le produit — et embaucher n'était pas encore possible.">
+                As a solo founder, I couldn't keep marketing, sales operations, and content running in parallel while also building the product — and hiring wasn't an option yet.
+              </p>
+              <h4 data-en="What I built" data-fr="Ce que j'ai construit">What I built</h4>
+              <ul>
+                <li data-en="Six specialized agents, each with a distinct remit and voice: a Chef de Cabinet that synthesizes all open work into one daily plan; a Gardien that fact-checks every document against a single source of truth; plus Marketing Director, Sales Director, Content Writer, and Prospecting Writer."
+                    data-fr="Six agents spécialisés, chacun avec un rôle et une voix distincts : un Chef de Cabinet qui synthétise tout le travail en cours en un plan quotidien ; un Gardien qui vérifie chaque document face à une source de vérité unique ; plus Directeur Marketing, Directeur Ventes, Rédacteur de Contenu et Rédacteur Prospection.">
+                  Six specialized agents, each with a distinct remit and voice: a Chef de Cabinet that synthesizes all open work into one daily plan; a Gardien that fact-checks every document against a single source of truth; plus Marketing Director, Sales Director, Content Writer, and Prospecting Writer.
+                </li>
+                <li data-en="A multi-provider LLM router across 5 providers (Anthropic, OpenAI, OpenRouter, ZAI, MiMo) with automatic fallback on failure and per-run token + cost tracking."
+                    data-fr="Un routeur LLM multi-fournisseurs sur 5 providers (Anthropic, OpenAI, OpenRouter, ZAI, MiMo) avec bascule automatique en cas d'échec et suivi des tokens et du coût par exécution.">
+                  A multi-provider LLM router across 5 providers (Anthropic, OpenAI, OpenRouter, ZAI, MiMo) with automatic fallback on failure and per-run token + cost tracking.
+                </li>
+                <li data-en="A guardrail layer: a facts.yml single source of truth the Gardien audits (literal + semantic passes) to catch contradictions before anything ships."
+                    data-fr="Une couche de garde-fous : un fichier facts.yml comme source de vérité unique, audité par le Gardien (passes littérale et sémantique) pour repérer les contradictions avant toute publication.">
+                  A guardrail layer: a facts.yml single source of truth the Gardien audits (literal + semantic passes) to catch contradictions before anything ships.
+                </li>
+                <li data-en="Daily orchestration: a 6 AM cron runs Gardien → Marketing → Chef de Cabinet, producing one Telegram briefing — &quot;here is your day, in order.&quot;"
+                    data-fr="Orchestration quotidienne : un cron à 6 h lance Gardien → Marketing → Chef de Cabinet et produit un seul brief Telegram — « voici ta journée, dans l'ordre ».">
+                  Daily orchestration: a 6 AM cron runs Gardien → Marketing → Chef de Cabinet, producing one Telegram briefing — "here is your day, in order."
+                </li>
+                <li data-en="A SQLite state store for briefs, proposals, drafts, the prospect pipeline, the follow-up schedule, and run/cost history."
+                    data-fr="Un magasin d'état SQLite pour les briefs, propositions, brouillons, le pipeline de prospects, le planning des relances et l'historique des exécutions et coûts.">
+                  A SQLite state store for briefs, proposals, drafts, the prospect pipeline, the follow-up schedule, and run/cost history.
+                </li>
+              </ul>
+              <h4 data-en="Stack" data-fr="Stack">Stack</h4>
+              <div class="tags">
+                <span class="tag">TypeScript</span><span class="tag">LLM routing</span><span class="tag">SQLite</span>
+                <span class="tag">Telegram Bot API</span><span class="tag">NestJS Schedule</span><span class="tag">structured logging</span>
+              </div>
+              <h4 data-en="Impact" data-fr="Impact">Impact</h4>
+              <p data-en="A solo founder runs marketing, sales ops, and content with a self-coordinating agent team; factual drift is caught automatically; and LLM cost is observable across providers — in production, with daily runs."
+                 data-fr="Un fondateur solo fait tourner marketing, opérations commerciales et contenu avec une équipe d'agents auto-coordonnée ; les dérives factuelles sont repérées automatiquement ; et le coût LLM est observable entre providers — en production, avec des exécutions quotidiennes.">
+                A solo founder runs marketing, sales ops, and content with a self-coordinating agent team; factual drift is caught automatically; and LLM cost is observable across providers — in production, with daily runs.
+              </p>
+            </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- ---- Kanda OS ---- -->
+        <article class="case card">
+          <div class="case__head">
+            <div>
+              <h3>Kanda OS</h3>
+              <p class="case__role" data-en="Founder &amp; sole engineer · 2025–2026" data-fr="Fondateur &amp; ingénieur unique · 2025–2026">Founder &amp; sole engineer · 2025–2026</p>
+            </div>
+            <div class="case__stats">
+              <span class="tag">66 features</span><span class="tag">122 models</span><span class="tag">45 security fixes</span><span class="tag">blue-green deploy</span>
+            </div>
+          </div>
+          <p class="case__summary"
+             data-en="A multi-tenant SaaS school-management platform for K-12 schools and higher-ed institutes across Central Africa and Senegal — academics, grades, payments, HR, mobile money, and more."
+             data-fr="Une plateforme SaaS multi-tenant de gestion scolaire pour les écoles K-12 et les instituts d'enseignement supérieur d'Afrique centrale et du Sénégal — scolarité, notes, paiements, RH, mobile money, et plus.">
+            A multi-tenant SaaS school-management platform for K-12 schools and higher-ed institutes across Central Africa and Senegal — academics, grades, payments, HR, mobile money, and more.
+          </p>
+
+          <details class="case__details">
+            <summary data-en="Read more" data-fr="En savoir plus">Read more</summary>
+            <div class="case__body-wrap">
+            <div class="case__body">
+              <h4 data-en="Problem" data-fr="Problème">Problem</h4>
+              <p data-en="Schools in the region managed academics, fees, and communication across spreadsheets and paper — no affordable, offline-capable, all-in-one platform fit their reality."
+                 data-fr="Les écoles de la région géraient scolarité, frais et communication entre tableurs et papier — aucune plateforme tout-en-un, abordable et utilisable hors-ligne ne correspondait à leur réalité.">
+                Schools in the region managed academics, fees, and communication across spreadsheets and paper — no affordable, offline-capable, all-in-one platform fit their reality.
+              </p>
+              <h4 data-en="What I built" data-fr="Ce que j'ai construit">What I built</h4>
+              <ul>
+                <li data-en="66 shipped features across 15+ API modules — academics, grading, report cards, billing, HR, campus/higher-ed, attendance, and scheduling."
+                    data-fr="66 fonctionnalités livrées sur 15+ modules d'API — scolarité, notes, bulletins, facturation, RH, campus/supérieur, présence et emploi du temps.">
+                  66 shipped features across 15+ API modules — academics, grading, report cards, billing, HR, campus/higher-ed, attendance, and scheduling.
+                </li>
+                <li data-en="122 tenant-scoped data models behind centralized multi-tenant isolation (request-scoped tenant context injected automatically)."
+                    data-fr="122 modèles de données scopés par tenant derrière une isolation multi-tenant centralisée (contexte de tenant injecté automatiquement par requête).">
+                  122 tenant-scoped data models behind centralized multi-tenant isolation (request-scoped tenant context injected automatically).
+                </li>
+                <li data-en="Flutterwave mobile-money integration (MTN/Orange/Wave) with webhook idempotency, server-side amount computation, and transactional payouts to schools."
+                    data-fr="Intégration mobile money Flutterwave (MTN/Orange/Wave) avec idempotence des webhooks, calcul du montant côté serveur et payouts transactionnels vers les écoles.">
+                  Flutterwave mobile-money integration (MTN/Orange/Wave) with webhook idempotency, server-side amount computation, and transactional payouts to schools.
+                </li>
+                <li data-en="A 45-finding security hardening: transactional payments (FOR UPDATE locks, anti-double-credit), IDOR fixes, JWT token-generation counters, and HMAC receipt signatures."
+                    data-fr="Un durcissement de sécurité sur 45 points : paiements transactionnels (verrous FOR UPDATE, anti-double-crédit), corrections d'IDOR, compteurs de génération de jetons JWT et signatures HMAC des reçus.">
+                  A 45-finding security hardening: transactional payments (FOR UPDATE locks, anti-double-credit), IDOR fixes, JWT token-generation counters, and HMAC receipt signatures.
+                </li>
+                <li data-en="Blue-green Docker deploys with Nginx, PgBouncer, Postgres 16, and Redis; PWA with offline support."
+                    data-fr="Déploiements blue-green Docker avec Nginx, PgBouncer, Postgres 16 et Redis ; PWA avec support hors-ligne.">
+                  Blue-green Docker deploys with Nginx, PgBouncer, Postgres 16, and Redis; PWA with offline support.
+                </li>
+              </ul>
+              <h4 data-en="Stack" data-fr="Stack">Stack</h4>
+              <div class="tags">
+                <span class="tag">NestJS</span><span class="tag">Next.js</span><span class="tag">Prisma</span>
+                <span class="tag">PostgreSQL</span><span class="tag">Redis</span><span class="tag">Docker</span>
+                <span class="tag">Flutterwave</span><span class="tag">TanStack Query</span><span class="tag">PWA</span>
+              </div>
+              <h4 data-en="Impact" data-fr="Impact">Impact</h4>
+              <p data-en="A complete, production multi-tenant SaaS — built and operated solo end-to-end, from schema to deploy."
+                 data-fr="Un SaaS multi-tenant complet et en production — conçu et exploité en solo de bout en bout, du schéma au déploiement.">
+                A complete, production multi-tenant SaaS — built and operated solo end-to-end, from schema to deploy.
+              </p>
+            </div>
+            </div>
+          </details>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section id="experience" class="reveal">
+      <div class="container">
+        <p class="section-label" data-scramble data-en="Experience" data-fr="Expérience">Experience</p>
+        <h2 class="section-title" data-en="Where I've worked" data-fr="Où j'ai travaillé">Where I've worked</h2>
+        <ol class="timeline">
+          <li class="timeline__item">
+            <div class="timeline__top">
+              <h3 class="timeline__role" data-en="Full-Stack Developer (Founder)" data-fr="Développeur Full-Stack (Fondateur)">Full-Stack Developer (Founder)</h3>
+              <time datetime="2025" class="muted">2025 – 2026</time>
+            </div>
+            <p class="timeline__org">Kanda OS · <span data-en="Independent" data-fr="Indépendant">Independent</span></p>
+            <p class="muted" data-en="Designed and built Kanda end-to-end: SaaS platform, AI agent system, payments, and operations."
+               data-fr="Conception et développement de Kanda de bout en bout : plateforme SaaS, système d'agents IA, paiements et opérations.">
+              Designed and built Kanda end-to-end: SaaS platform, AI agent system, payments, and operations.
+            </p>
+          </li>
+          <li class="timeline__item">
+            <div class="timeline__top">
+              <h3 class="timeline__role" data-en="DevOps Consultant" data-fr="Consultant DevOps">DevOps Consultant</h3>
+              <time datetime="2022" class="muted">2022 – 2024</time>
+            </div>
+            <p class="timeline__org">Riverfortress SARL · Brazzaville, Congo</p>
+            <p class="muted" data-en="CI/CD pipelines, containerization, monitoring, and DevOps coaching for development teams."
+               data-fr="Pipelines CI/CD, conteneurisation, supervision et accompagnement DevOps des équipes de développement.">
+              CI/CD pipelines, containerization, monitoring, and DevOps coaching for development teams.
+            </p>
+          </li>
+          <li class="timeline__item">
+            <div class="timeline__top">
+              <h3 class="timeline__role" data-en="IT Maintenance Trainer" data-fr="Formateur en maintenance informatique">IT Maintenance Trainer</h3>
+              <time datetime="2021" class="muted">2021 – 2022</time>
+            </div>
+            <p class="timeline__org">Groupe BUT Telecom · Brazzaville, Congo</p>
+            <p class="muted" data-en="Hardware and software training, course design, and skills assessment."
+               data-fr="Formations hardware et software, conception des supports et évaluation des acquis.">
+              Hardware and software training, course design, and skills assessment.
+            </p>
+          </li>
+          <li class="timeline__item">
+            <div class="timeline__top">
+              <h3 class="timeline__role" data-en="Assistant Sales Manager (remote)" data-fr="Assistant Sales Manager (télétravail)">Assistant Sales Manager (remote)</h3>
+              <time datetime="2020" class="muted">2020 – 2021</time>
+            </div>
+            <p class="timeline__org">Growth Continue Consulting · <span data-en="Remote" data-fr="À distance">Remote</span></p>
+            <p class="muted" data-en="Client relationship management, remote team coordination, and activity reporting."
+               data-fr="Gestion de la relation client, coordination d'équipes à distance et reporting d'activité.">
+              Client relationship management, remote team coordination, and activity reporting.
+            </p>
+          </li>
+          <li class="timeline__item">
+            <div class="timeline__top">
+              <h3 class="timeline__role" data-en="Helpdesk Technician (freelance)" data-fr="Technicien Helpdesk (freelance)">Helpdesk Technician (freelance)</h3>
+              <time datetime="2017" class="muted">2017 – present</time>
+            </div>
+            <p class="timeline__org"><span data-en="Independent" data-fr="Indépendant">Independent</span> · Brazzaville, Congo</p>
+            <p class="muted" data-en="Windows/Linux/macOS support and hardware &amp; software maintenance for startups and small businesses."
+               data-fr="Support Windows/Linux/macOS et maintenance hardware &amp; software pour startups et TPE.">
+              Windows/Linux/macOS support and hardware &amp; software maintenance for startups and small businesses.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ EDUCATION ============ -->
+    <section id="education" class="reveal">
+      <div class="container">
+        <p class="section-label" data-scramble data-en="Education" data-fr="Formation">Education</p>
+        <h2 class="section-title" data-en="Education" data-fr="Formation">Education</h2>
+        <div class="edu-grid">
+          <div class="card edu-card">
+            <span class="edu-card__period muted">2022 – 2023</span>
+            <h3 data-en="M1 — Computer Science &amp; Engineering" data-fr="Master 1 — Computer Science &amp; Engineering">M1 — Computer Science &amp; Engineering</h3>
+            <p class="muted" data-en="AI Engineering specialization" data-fr="Spécialisation Ingénierie de l'Intelligence Artificielle">AI Engineering specialization</p>
+            <p class="edu-card__school">ITER College, SOA University — Bhubaneswar, India</p>
+          </div>
+          <div class="card edu-card">
+            <span class="edu-card__period muted">2020</span>
+            <h3 data-en="Licence — Systems &amp; Networks Administration" data-fr="Licence — Administration Systèmes &amp; Réseaux">Licence — Systems &amp; Networks Administration</h3>
+            <p class="muted" data-en="Infrastructures, networks &amp; security" data-fr="Infrastructures, réseaux &amp; sécurité">Infrastructures, networks &amp; security</p>
+            <p class="edu-card__school">Institut IEPA — Brazzaville, Congo</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="reveal">
+      <div class="container contact__inner">
+        <p class="section-label" data-scramble data-en="Contact" data-fr="Contact">Contact</p>
+        <h2 class="section-title" data-en="Let's talk" data-fr="Parlons-en">Let's talk</h2>
+        <p class="contact__lead muted"
+           data-en="Open to software engineering roles — remote or on-site. The fastest way to reach me is email or WhatsApp."
+           data-fr="Ouvert aux postes d'ingénieur logiciel — en télétravail ou sur site. Le plus rapide : email ou WhatsApp.">
+          Open to software engineering roles — remote or on-site. The fastest way to reach me is email or WhatsApp.
+        </p>
+        <div class="contact__links">
+          <a class="contact__link" href="mailto:andreadonismercy@gmail.com">
+            <span class="contact__link-label">Email</span>
+            <span class="contact__link-value">andreadonismercy@gmail.com</span>
+          </a>
+          <a class="contact__link" href="https://github.com/AdalgiMercy" target="_blank" rel="noopener">
+            <span class="contact__link-label">GitHub</span>
+            <span class="contact__link-value">@AdalgiMercy</span>
+          </a>
+          <a class="contact__link" href="https://www.linkedin.com/in/andre-mo-aa5ab4420/" target="_blank" rel="noopener">
+            <span class="contact__link-label">LinkedIn</span>
+            <span class="contact__link-value">/andre-mo</span>
+          </a>
+          <a class="contact__link" href="https://wa.me/918018753328" target="_blank" rel="noopener">
+            <span class="contact__link-label">WhatsApp</span>
+            <span class="contact__link-value">+91 80 1875 3328</span>
+          </a>
+          <a class="contact__link" href="tel:+242044244495">
+            <span class="contact__link-label" data-en="Phone" data-fr="Téléphone">Phone</span>
+            <span class="contact__link-value">+242 04 424 44 95</span>
+          </a>
+        </div>
+        <p class="muted contact__note" data-en="References and additional projects on request." data-fr="Références et projets supplémentaires sur demande.">References and additional projects on request.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">© <span id="year"></span> André Adonis Mounguengui</p>
+      <p class="muted footer__built" data-en="Built by hand — no frameworks." data-fr="Construit à la main — sans framework.">Built by hand — no frameworks.</p>
+    </div>
+  </footer>
+</body>
+</html>
