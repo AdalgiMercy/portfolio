@@ -1,44 +1,51 @@
-/**
- * i18n.js — bilingual EN/FR toggle.
- *
- * Every translatable element carries data-en and data-fr attributes. On load we
- * set each element's textContent from the active language, persist the choice,
- * and keep <html lang> in sync. Deep-linkable via ?lang=en|fr.
- */
-const KEY = "lang";
-const SUPPORTED = ["en", "fr"];
+(() => {
+  const supported = ["en", "fr"];
+  const root = document.documentElement;
+  const button = document.getElementById("lang-toggle");
+  const initialUrl = new URL(location.href);
+  const requested = initialUrl.searchParams.get("lang");
+  let saved;
 
-function current() {
-  const q = new URLSearchParams(location.search).get("lang");
-  if (q && SUPPORTED.includes(q)) return q;
-  return localStorage.getItem(KEY) || "en";
-}
-
-function apply(lang) {
-  if (!SUPPORTED.includes(lang)) lang = "en";
-  document.documentElement.lang = lang;
-  document.querySelectorAll("[data-en]").forEach((el) => {
-    const value = el.getAttribute("data-" + lang);
-    if (value !== null) el.textContent = value;
-  });
-  // The language button shows the language you would switch TO.
-  const btn = document.getElementById("lang-toggle");
-  if (btn) {
-    btn.textContent = lang === "en" ? "FR" : "EN";
-    btn.setAttribute(
-      "aria-label",
-      lang === "en" ? "Switch to French" : "Passer en anglais",
-    );
+  try {
+    saved = localStorage.getItem("lang");
+  } catch {
+    // A restricted browser can still use the language switch for this page.
   }
-}
 
-function toggle() {
-  const next = current() === "en" ? "fr" : "en";
-  localStorage.setItem(KEY, next);
-  apply(next);
-}
+  function apply(language) {
+    root.lang = language;
+    document.querySelectorAll("[data-en]").forEach((element) => {
+      element.textContent = element.dataset[language];
+    });
+    document.querySelectorAll("[data-aria-en]").forEach((element) => {
+      element.setAttribute("aria-label", element.getAttribute(`data-aria-${language}`));
+    });
 
-document.addEventListener("DOMContentLoaded", () => {
-  apply(current());
-  document.getElementById("lang-toggle")?.addEventListener("click", toggle);
-});
+    button.textContent = language === "en" ? "FR" : "EN";
+    button.setAttribute("aria-label", language === "en" ? "Switch to French" : "Passer en anglais");
+  }
+
+  apply(supported.includes(requested) ? requested : supported.includes(saved) ? saved : "en");
+  button.hidden = false;
+
+  button.addEventListener("click", () => {
+    const next = root.lang === "en" ? "fr" : "en";
+    apply(next);
+
+    try {
+      localStorage.setItem("lang", next);
+    } catch {
+      // The visible language still switches when storage is unavailable.
+    }
+
+    const url = new URL(location.href);
+    if (url.searchParams.has("lang")) {
+      url.searchParams.set("lang", next);
+      try {
+        history.replaceState(null, "", url);
+      } catch {
+        // The browser may restrict history updates for local files.
+      }
+    }
+  });
+})();

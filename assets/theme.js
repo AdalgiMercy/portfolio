@@ -1,40 +1,40 @@
-/**
- * theme.js — dark-first light/dark theme toggle.
- *
- * Default is dark. When no choice is stored we follow prefers-color-scheme,
- * and we keep following OS changes until the user picks explicitly.
- */
-const KEY = "theme";
-const root = document.documentElement;
-const mq = matchMedia("(prefers-color-scheme: light)");
+(() => {
+  const root = document.documentElement;
+  let theme = "light";
 
-const stored = () => localStorage.getItem(KEY); // 'dark' | 'light' | null
-const system = () => (mq.matches ? "light" : "dark");
-const resolve = () => stored() || system();
-
-function apply(theme) {
-  root.setAttribute("data-theme", theme);
-  const btn = document.getElementById("theme-toggle");
-  if (btn) {
-    btn.textContent = theme === "dark" ? "☀" : "◐";
-    btn.setAttribute(
-      "aria-label",
-      theme === "dark" ? "Switch to light theme" : "Switch to dark theme",
-    );
+  try {
+    if (localStorage.getItem("theme") === "dark") theme = "dark";
+  } catch {
+    // Use the default palette when storage is unavailable.
   }
-}
 
-function toggle() {
-  const next = resolve() === "dark" ? "light" : "dark";
-  localStorage.setItem(KEY, next);
-  apply(next);
-}
+  root.dataset.theme = theme;
+  document.querySelector('meta[name="theme-color"]').content = theme === "dark" ? "#12241d" : "#f7f7ef";
 
-document.addEventListener("DOMContentLoaded", () => {
-  apply(resolve());
-  document.getElementById("theme-toggle")?.addEventListener("click", toggle);
-  // Follow the OS only while the user hasn't chosen.
-  mq.addEventListener("change", () => {
-    if (!stored()) apply(system());
+  document.addEventListener("DOMContentLoaded", () => {
+    const button = document.getElementById("theme-toggle");
+
+    const applyTheme = () => {
+      const dark = theme === "dark";
+      root.dataset.theme = theme;
+      document.querySelector('meta[name="theme-color"]').content = dark ? "#12241d" : "#f7f7ef";
+      button.dataset.ariaEn = dark ? "Switch to light theme" : "Switch to dark theme";
+      button.dataset.ariaFr = dark ? "Activer le thème clair" : "Activer le thème sombre";
+      button.setAttribute("aria-label", root.lang === "fr" ? button.dataset.ariaFr : button.dataset.ariaEn);
+      button.firstElementChild.textContent = dark ? "☼" : "◐";
+    };
+
+    applyTheme();
+    button.hidden = false;
+
+    button.addEventListener("click", () => {
+      theme = theme === "dark" ? "light" : "dark";
+      applyTheme();
+      try {
+        localStorage.setItem("theme", theme);
+      } catch {
+        // The palette remains active for this page even without storage.
+      }
+    });
   });
-});
+})();

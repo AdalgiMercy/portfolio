@@ -1,65 +1,92 @@
-/**
- * main.js — nav scroll-spy, mobile menu, print button, footer year.
- */
-const SECTION_IDS = ["about", "skills", "work", "experience", "education", "contact"];
+(() => {
+  const nav = document.querySelector(".nav");
+  const menu = document.getElementById("nav-links");
+  const menuButton = document.getElementById("nav-burger");
+  const navLinks = [...nav.querySelectorAll('a[href^="#"]')];
+  const sections = [...document.querySelectorAll("main section[id]")];
+  const studies = [...document.querySelectorAll(".case__details")];
+  const cvButton = document.getElementById("print-cv");
+  let expandedForPrint = [];
 
-document.addEventListener("DOMContentLoaded", () => {
-  const sections = SECTION_IDS.map((id) => document.getElementById(id)).filter(Boolean);
-  const linkFor = (id) => document.querySelector(`.nav__links a[href="#${id}"]`);
-
-  // ---- Scroll-spy: highlight the active nav link ----
-  const spy = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          document
-            .querySelectorAll(".nav__links a")
-            .forEach((a) => a.classList.remove("is-active"));
-          linkFor(entry.target.id)?.classList.add("is-active");
-        }
-      });
-    },
-    { rootMargin: "-45% 0px -50% 0px" },
-  );
-  sections.forEach((s) => spy.observe(s));
-
-  // ---- Mobile menu ----
-  const burger = document.getElementById("nav-burger");
-  const links = document.getElementById("nav-links");
-  const closeMenu = () => {
-    links?.classList.remove("is-open");
-    burger?.setAttribute("aria-expanded", "false");
+  const setMenuOpen = (open) => {
+    menu.classList.toggle("is-open", open);
+    menuButton.setAttribute("aria-expanded", String(open));
   };
-  burger?.addEventListener("click", () => {
-    const open = links.classList.toggle("is-open");
-    burger.setAttribute("aria-expanded", String(open));
+
+  nav.classList.add("nav--enhanced");
+  menuButton.hidden = false;
+  menuButton.addEventListener("click", (event) => {
+    const open = !menu.classList.contains("is-open");
+    setMenuOpen(open);
+
+    if (open && event.detail === 0) menu.querySelector("a").focus();
   });
-  // Close the menu after picking a destination.
-  links?.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeMenu));
 
-  // ---- Reveal sections on scroll ----
-  // CSS only hides .reveal under .js + prefers-reduced-motion: no-preference,
-  // so nothing is ever blank under no-JS or reduced-motion. We just flip .is-visible.
-  const reveals = document.querySelectorAll(".reveal");
-  if (reveals.length) {
-    const revealObserver = new IntersectionObserver(
-      (entries, obs) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            obs.unobserve(entry.target);
-          }
-        });
-      },
-      { rootMargin: "0px 0px -10% 0px" },
-    );
-    reveals.forEach((el) => revealObserver.observe(el));
-  }
+  navLinks.forEach((link) => link.addEventListener("click", () => {
+    if (!menu.classList.contains("is-open")) return;
 
-  // ---- Print = "Download CV" ----
-  document.getElementById("print-cv")?.addEventListener("click", () => window.print());
+    setMenuOpen(false);
+    const target = document.getElementById(link.hash.slice(1));
+    target.tabIndex = -1;
+    target.focus({ preventScroll: true });
+  }));
 
-  // ---- Footer year ----
-  const yearEl = document.getElementById("year");
-  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
-});
+  nav.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && menu.classList.contains("is-open")) {
+      setMenuOpen(false);
+      menuButton.focus();
+    }
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!nav.contains(event.target)) setMenuOpen(false);
+  });
+  matchMedia("(max-width: 64rem)").addEventListener("change", () => setMenuOpen(false));
+
+  let scheduled = false;
+  let currentSection;
+
+  const updateCurrentSection = () => {
+    scheduled = false;
+    const marker = window.innerHeight * .35;
+    const visibleSection = sections.findLast((section) => section.getBoundingClientRect().top <= marker);
+    const atBottom = window.scrollY > 0 && Math.ceil(window.scrollY + window.innerHeight) >= document.documentElement.scrollHeight;
+    const next = atBottom ? sections.at(-1).id : visibleSection?.id;
+
+    if (currentSection === next) return;
+    currentSection = next;
+
+    navLinks.forEach((link) => {
+      if (link.hash === `#${next}` && next !== "hero") {
+        link.setAttribute("aria-current", "location");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
+  };
+
+  const scheduleUpdate = () => {
+    if (scheduled) return;
+    scheduled = true;
+    requestAnimationFrame(updateCurrentSection);
+  };
+
+  window.addEventListener("scroll", scheduleUpdate, { passive: true });
+  window.addEventListener("resize", scheduleUpdate);
+  document.addEventListener("toggle", scheduleUpdate, true);
+  document.fonts.ready.then(scheduleUpdate);
+  scheduleUpdate();
+
+  cvButton.hidden = false;
+  cvButton.addEventListener("click", () => window.print());
+  window.addEventListener("beforeprint", () => {
+    expandedForPrint = studies.filter((study) => !study.open);
+    expandedForPrint.forEach((study) => { study.open = true; });
+  });
+  window.addEventListener("afterprint", () => {
+    expandedForPrint.forEach((study) => { study.open = false; });
+    expandedForPrint = [];
+  });
+
+  document.getElementById("year").textContent = String(new Date().getFullYear());
+})();
